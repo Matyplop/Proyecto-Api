@@ -32,16 +32,57 @@
     animation: logo-spin infinite 20s linear;
   }
 }
-.cardContainer {
+
+.grid-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 16px;
+  padding: 16px;
+  /* Espacio entre las columnas */
 }
 
 .card {
-  width: 18rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 300px;
+  /* Altura fija más larga para todas las tarjetas */
+  overflow: hidden;
+  /* Ocultar contenido que exceda la altura */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
+.card img {
+  max-height: 150px;
+  /* Altura máxima para las imágenes */
+  object-fit: cover;
+  /* Ajustar la imagen para que cubra el contenedor */
+}
+
+.card-content {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.card-title {
+  font-size: 1.2em;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* Añadir puntos suspensivos si el texto es muy largo */
+}
+
+.card-text {
+  font-size: 1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* Añadir puntos suspensivos si el texto es muy largo */
+}
 .read-the-docs {
   color: #888;
 }

@@ -5,19 +5,23 @@
 //en react los prop son las propiedades que le inyecto a un componente para que este pueda ser mas dinamico
 import {  BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-
-import "./App.css";
 import Agregar from "./pages/Agregar";
+import Canciones from "./pages/Canciones";
+import "./App.css";
+
 
 function App() {
  return (
 
-// ver por que no funciona
+
   <Router>
     <Routes>
       <Route path="/Proyecto-Api" element={<Home />} />
       <Route path="/Agregar" element={<Agregar />} />
       <Route path="/Home" element={<Home />} />
+      
+      
+     <Route path="/Canciones" element={<Canciones/>} />
     </Routes>
   </Router>
   )

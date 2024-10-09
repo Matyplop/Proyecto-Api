@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Agregar from "./pages/Agregar";
 import Canciones from "./pages/Canciones";
 import "./App.css";
+import Eliminar from "./pages/Eliminar";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Route path="/Proyecto-Api" element={<Home />} />
       <Route path="/Agregar" element={<Agregar />} />
       <Route path="/Home" element={<Home />} />
+      <Route path="/Eliminar" element={<Eliminar />} />
       
       
      <Route path="/Canciones" element={<Canciones/>} />

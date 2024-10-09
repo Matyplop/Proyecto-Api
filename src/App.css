@@ -27,6 +27,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
@@ -44,44 +50,43 @@
 .card {
   background-color: #fff;
   border: 1px solid #ddd;
-  padding: 16px;
-  border-radius: 8px;
+  padding: 16px;  /* Espacio interno */
+  border-radius: 8px; /* Bordes redondeados */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: 300px;
-  /* Altura fija más larga para todas las tarjetas */
-  overflow: hidden;
-  /* Ocultar contenido que exceda la altura */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  
+  overflow: hidden; /* Ocultar el contenido que sobresale */
+  display: flex; /* Flexbox */
+  flex-direction: column; /* Apilar elementos */
+  justify-content: space-between; /* Espacio entre elementos */
+}
+.card h2 {
+  font-size: 1.25rem; /* Tamaño del título */
+  margin: 0 0 8px 0; /* Eliminar el margen inferior */
+  max-height: 3em; 
+  /* Limitar la altura del título */
+  overflow: hidden; /* Ocultar el texto que sobresale */
+  text-overflow: ellipsis; /* Mostrar puntos suspensivos */
+  white-space: nowrap; /* No permitir saltos de línea */
 }
 
 .card img {
-  max-height: 150px;
-  /* Altura máxima para las imágenes */
-  object-fit: cover;
-  /* Ajustar la imagen para que cubra el contenedor */
+  max-width: 100%; /* Imagen no más ancha que el contenedor */
+  height: auto; /* Imagen proporcional */
+  margin-bottom: 8px; /* Espacio entre la imagen y el título */
 }
 
-.card-content {
-  flex-grow: 1;
-  overflow: hidden;
+
+
+.card p {
+  flex-grow: 1; /* Hacer que el párrafo ocupe el espacio restante */
+  margin: 0 0 8px 0; /* Eliminar el margen inferior */
 }
 
-.card-title {
-  font-size: 1.2em;
-  margin-bottom: 8px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  /* Añadir puntos suspensivos si el texto es muy largo */
-}
-
-.card-text {
-  font-size: 1em;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  /* Añadir puntos suspensivos si el texto es muy largo */
+.card button {
+  align-self: flex-end; /* Alinear el botón a la derecha */
+  margin-top: auto; /* Empujar el botón hacia abajo */
+  align-self: center; /*centrar el botón horizontal*/
+  
 }
 .read-the-docs {
   color: #888;

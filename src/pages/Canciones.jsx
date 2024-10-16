@@ -66,7 +66,8 @@ function Canciones() {
     });
   }
 
-  
+  //botones se utiliza una función que al hacer click 
+  //se llamará a la función EliminarCancion y se le pasará el id de la canción. para eliminarla
 
 
   return (
@@ -95,8 +96,7 @@ function Canciones() {
               <p>Duración: {Canciones.Duracion} minutos</p>
               <p>Autor: {Canciones.Autor}</p>
               <button onClick={() => EliminarCancion(Canciones.id)}>Eliminar Cancion</button>
-              //Aquí se utiliza una función que al hacer click 
-              //se llamará a la función EliminarCancion y se le pasará el id de la canción. para eliminarla
+              
               <button onClick={() => EditarCancion(Canciones.id)}><EditIcon /></button>
               
             </div>

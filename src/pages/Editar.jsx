@@ -43,12 +43,12 @@ function Editar() {
     axios.put(`https://66e44d51d2405277ed13d77a.mockapi.io/Cancion/${id}`, data)
       .then((response) => {
         console.log(response.data);
-        navigate("/Proyecto-Api/Canciones"); // al hacer la peticion se vá a la pagina canciones
+        navigate("/Canciones"); // al hacer la peticion se vá a la pagina canciones
       });
   };
 
   const Volver = () => {
-    navigate('/Proyecto-Api/Canciones');
+    navigate('/Canciones');
   };
 
   //onSubmit es la función que se ejecuta al enviar el formulario. 

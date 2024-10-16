@@ -22,15 +22,15 @@ function Canciones() {
   const navigate = useNavigate();
 
   const VolverHome = () => {
-    navigate('/Proyecto-Api/Home');
+    navigate('/Home');
   };
 
   const irAPaginaAgregar = () => {
-    navigate('/Proyecto-Api/Agregar');
+    navigate('/Agregar');
   };
 
   const EditarCancion = (id) => { //para tomar el id especifico de la cancion , se pasa como parametro
-    navigate(`/Proyecto-Api/editar/${id}`);
+    navigate(`/editar/${id}`);
 
   }
 

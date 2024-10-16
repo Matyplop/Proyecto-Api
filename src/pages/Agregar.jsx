@@ -29,7 +29,7 @@ function Agregar() {
   };
 
   const Volver = () => {
-    navigate('/Proyecto-Api/Canciones');
+    navigate('/Canciones');
   };
 
  
@@ -42,7 +42,7 @@ function Agregar() {
   axios.post("https://66e44d51d2405277ed13d77a.mockapi.io/Cancion", data)
     .then((response) => {
       console.log(response.data);
-      navigate("/Proyecto-Api/Canciones");
+      navigate("/Canciones");
       
      
      

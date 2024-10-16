@@ -20,11 +20,11 @@ function App() {
   <HashRouter>
  
     <Routes>
-      <Route path="/Proyecto-Api" element={<Home />} />
-      <Route path="/Proyecto-Api/Agregar" element={<Agregar />} />
-      <Route path="/Proyecto-Api/Home" element={<Home />} />
-      <Route path="/Proyecto-Api/Editar/:id" element={<Editar />} /> //aqui podemos ver que se le pasa un parametro id
-      <Route path="/Proyecto-Api/Canciones" element={<Canciones/>} />
+      <Route path="/" element={<Home />} />
+      <Route path="/Agregar" element={<Agregar />} />
+      <Route path="/Home" element={<Home />} />
+      <Route path="/Editar/:id" element={<Editar />} /> //aqui podemos ver que se le pasa un parametro id
+      <Route path="/Canciones" element={<Canciones/>} />
     </Routes>
   
   

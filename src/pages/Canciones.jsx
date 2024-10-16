@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios"; //peticiones HTTP
 import "bootstrap/dist/css/bootstrap.min.css";
-import { redirect } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 
@@ -19,18 +19,18 @@ function Canciones() {
   const [Canciones, setCanciones] = useState([]); //aqui manejamos el estado de los datos 
    //ademas devolvemos un array vacio para que se almacenen los datos de la API , el cual será las cancuones 
    //y setCanciones para actualizar el estado.
-  const navegar = redirect();
+  const navigate = useNavigate();
 
   const VolverHome = () => {
-    navegar('/Home');
+    navigate('/Proyecto-Api/Home');
   };
 
   const irAPaginaAgregar = () => {
-    navegar('/Agregar');
+    navigate('/Proyecto-Api/Agregar');
   };
 
   const EditarCancion = (id) => { //para tomar el id especifico de la cancion , se pasa como parametro
-    navegar(`/editar/${id}`);
+    navigate(`/Proyecto-Api/editar/${id}`);
 
   }
 

@@ -8,11 +8,7 @@ function Home() {
   const navigate = useNavigate(); 
  
 
-  /*
-  const VerPlaylist = () => {
-    navigate('/Playlist');
-  }
-    */
+ 
 
   const IrCanciones = () => {
     navigate('/Canciones');

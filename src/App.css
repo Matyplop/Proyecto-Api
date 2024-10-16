@@ -86,6 +86,8 @@
   align-self: flex-end; /* Alinear el botón a la derecha */
   margin-top: auto; /* Empujar el botón hacia abajo */
   align-self: center; /*centrar el botón horizontal*/
+  margin-bottom: 8px;
+
   
 }
 .read-the-docs {

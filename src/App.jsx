@@ -3,30 +3,35 @@
 //npm install , instala dependencias de un proyecto de node
 
 //en react los prop son las propiedades que le inyecto a un componente para que este pueda ser mas dinamico
-import {  BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Home from "./pages/Home";
 import Agregar from "./pages/Agregar";
 import Canciones from "./pages/Canciones";
+import Editar from "./pages/Editar";
 import "./App.css";
-import Eliminar from "./pages/Eliminar";
+
+
 
 
 function App() {
  return (
-
-
-  <Router>
+  
+  <BrowserRouter>
+ 
     <Routes>
       <Route path="/Proyecto-Api" element={<Home />} />
       <Route path="/Agregar" element={<Agregar />} />
       <Route path="/Home" element={<Home />} />
-      <Route path="/Eliminar" element={<Eliminar />} />
-      
-      
-     <Route path="/Canciones" element={<Canciones/>} />
+      <Route path="/Editar/:id" element={<Editar />} /> //aqui podemos ver que se le pasa un parametro id
+      <Route path="/Canciones" element={<Canciones/>} />
     </Routes>
-  </Router>
-  )
+  
+  
+  </BrowserRouter>
+
+
+  
+  );
 }
 
 export default App;

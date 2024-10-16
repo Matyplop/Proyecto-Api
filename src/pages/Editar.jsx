@@ -13,7 +13,7 @@ function Editar() {
   //handleSubmit: para poder enviar los datos del formulario
   //register: registra los campos del formulario. como que los valida
   //setValue: para poder guardar los datos de la cancion en los campos del formulario
-//formState: {errors} : se encarga de los errores que puedan presentar el formulario.
+  //formState: {errors} : se encarga de los errores que puedan presentar el formulario.
 
   //aqui utilizo UseEffect para llamar a la API y obtener los datos de la cancion
   //entonces cada vez que responde se guarda en data  (response.data)

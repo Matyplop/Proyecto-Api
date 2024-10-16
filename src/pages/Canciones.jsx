@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios"; //peticiones HTTP
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useNavigate } from 'react-router-dom';
+import { redirect } from "react-router-dom";
 import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
+
 
 //useNavigate usa las rutas que estan en el Router en app.jsx para navegar entre paginas
 //useState: lo utilizo para almacenar las canciones que obtengo de la API
@@ -17,18 +19,18 @@ function Canciones() {
   const [Canciones, setCanciones] = useState([]); //aqui manejamos el estado de los datos 
    //ademas devolvemos un array vacio para que se almacenen los datos de la API , el cual será las cancuones 
    //y setCanciones para actualizar el estado.
-  const navigate = useNavigate();
+  const navegar = redirect();
 
   const VolverHome = () => {
-    navigate('/Home');
+    navegar('/Home');
   };
 
   const irAPaginaAgregar = () => {
-    navigate('/Agregar');
+    navegar('/Agregar');
   };
 
   const EditarCancion = (id) => { //para tomar el id especifico de la cancion , se pasa como parametro
-    navigate(`/editar/${id}`);
+    navegar(`/editar/${id}`);
 
   }
 
@@ -95,9 +97,10 @@ function Canciones() {
                 />
               <p>Duración: {Canciones.Duracion} minutos</p>
               <p>Autor: {Canciones.Autor}</p>
-              <button onClick={() => EliminarCancion(Canciones.id)}>Eliminar Cancion</button>
+              <button onClick={() => EditarCancion(Canciones.id)}>Editar <EditIcon /></button>
+              <button onClick={() => EliminarCancion(Canciones.id)}>Eliminar <DeleteIcon /></button>
               
-              <button onClick={() => EditarCancion(Canciones.id)}><EditIcon /></button>
+              
               
             </div>
            

@@ -23,7 +23,7 @@ function App() {
       <Route path="/Agregar" element={<Agregar />} />
       <Route path="/Home" element={<Home />} />
       <Route path="/Editar/:id" element={<Editar />} /> //aqui podemos ver que se le pasa un parametro id
-      <Route path="/Canciones" element={<Canciones/>} />
+      <Route path="/Proyecto-Api/Canciones" element={<Canciones/>} />
     </Routes>
   
   

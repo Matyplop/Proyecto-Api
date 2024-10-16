@@ -11,7 +11,7 @@ function Home() {
  
 
   const IrCanciones = () => {
-    navigate('/Canciones');
+    navigate('/Proyecto-Api/Canciones');
   }
 
  

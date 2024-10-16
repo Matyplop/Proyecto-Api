@@ -73,6 +73,7 @@
   max-width: 100%; /* Imagen no más ancha que el contenedor */
   height: auto; /* Imagen proporcional */
   margin-bottom: 8px; /* Espacio entre la imagen y el título */
+  border-radius: 5px;
 }
 
 
@@ -86,7 +87,14 @@
   align-self: flex-end; /* Alinear el botón a la derecha */
   margin-top: auto; /* Empujar el botón hacia abajo */
   align-self: center; /*centrar el botón horizontal*/
-  margin-bottom: 8px;
+  margin-bottom: 9px;
+  width: 80%;
+  
+  
+  
+  
+  
+
 
   
 }

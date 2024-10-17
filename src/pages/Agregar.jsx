@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 function Agregar() {
-  const {  register, handleSubmit, formState: { errors } } = useForm(); 
+  const {  register, handleSubmit, } = useForm(); 
   //llamamos al hook userForm para utilizar los metodos   de validacion de los campos del formulario
   //register: registra los campos y los valida
   //handlesubmit: para poder enviar los datos del formulario
@@ -56,10 +56,10 @@ function Agregar() {
   //handleSubmit:  verifica si los dato son correctos 
   // onsubmit:  cuando el formulario se envia si los datos son correctos 
   //handleSubmit(onSubmit): esto se encarga de validar los datos del formulario
-  //register :  registra los campos del formulario y los valida,
+  //register :  registra los campos del formulario y los valida,ademas los 3 puntos son para que se pueda usar todas las propiedades de register
   // utilizando como clave ya sea titulo , duracion , autor o caratula.
   return (
-    <div>
+    <>
       <h1>Agregar canción a la API</h1>
       
       
@@ -70,7 +70,7 @@ function Agregar() {
           <Form.Label>Nombre de la canción</Form.Label>
           <Form.Control type="text"  placeholder="Ingresar Canción" {...register('Titulo',
             {required :true})}/>
-            {errors.Titulo?.type === 'required' && <p>Campo requerido</p>}
+            
 
           
           
@@ -80,7 +80,7 @@ function Agregar() {
           <Form.Label>Duracion</Form.Label>
           <Form.Control type="number" name= "Duracion" placeholder="Ingresar Duración(en minutos)" {...register("Duracion",
             {required :true})}/>
-            {errors.Titulo?.type === 'required' && <p>Campo requerido</p>}
+            
           
         </Form.Group>
 
@@ -89,7 +89,7 @@ function Agregar() {
           <Form.Label>Reproduccion</Form.Label>
           <Form.Control type="text" name= "Autor" placeholder="Ingresar Autor" {...register("Autor",
             {required :true})}/>
-            {errors.Titulo?.type === 'required' && <p>Campo requerido</p>}
+            
           
 
 
@@ -99,7 +99,7 @@ function Agregar() {
           <Form.Label>Caratula</Form.Label>
           <Form.Control type="text" name= "Caratula" placeholder="Ingresar Link de imagen" {...register("Caratula",
             {required :true})}/>
-            {errors.Titulo?.type === 'required' && <p>Campo requerido</p>}
+            
           
 
 
@@ -112,9 +112,10 @@ function Agregar() {
       
       
       <button className="button-spacing" onClick={Volver}>Volver</button>
+    
+    </> 
       
-      
-    </div>
+    
   );
 };
 

@@ -13,7 +13,8 @@ import { HashRouter } from "react-router-dom";
 
 
 
-
+//HashRouter: Este componente envuelve las rutas para que funcione con github pages , ya que no soportaba rutas directas.
+// Usa # en la URl para evitar el problema.
 function App() {
  return (
   
@@ -23,7 +24,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/Agregar" element={<Agregar />} />
       <Route path="/Home" element={<Home />} />
-      <Route path="/Editar/:id" element={<Editar />} /> //aqui podemos ver que se le pasa un parametro id
+      <Route path="/Editar/:id" element={<Editar />} /> //id es un parametro dinamico ,accedemos a ella mediante el hook useParams 
       <Route path="/Canciones" element={<Canciones/>} />
     </Routes>
   

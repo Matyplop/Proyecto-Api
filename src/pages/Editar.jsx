@@ -9,7 +9,7 @@ function Editar() {
                                 // por ende sacamos los parametros de id con useParams
   const navigate = useNavigate();
   
-  const { register, handleSubmit, setValue, formState: { errors } } = useForm(); 
+  const { register, handleSubmit, setValue} = useForm(); 
   //handleSubmit: para poder enviar los datos del formulario
   //register: registra los campos del formulario. como que los valida
   //setValue: para poder guardar los datos de la cancion en los campos del formulario
@@ -23,7 +23,9 @@ function Editar() {
       .then((response) => {
         const data = response.data;
         // aqui con setValue guardo los datos de la cancion en los campos del formulario
-        //con esto podemos ver ya la informacion que esta por defecto y poder editarla 
+        //con esto podemos ver ya la informacion que esta por defecto y poder editarla
+        //ademas sirve para pre cargar los datos en el formulario  
+        //titulo es lo que sale en register y data.Titulo es lo que viene de la API
         setValue('Titulo', data.Titulo);
         setValue('Duracion', data.Duracion);
         setValue('Autor', data.Autor);
@@ -56,7 +58,7 @@ function Editar() {
   //register:  registra los campos del formulario. como que los valida 
 
   return (
-    <div>
+    <>
       <h1>Editar Canción</h1>
 
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -67,7 +69,7 @@ function Editar() {
             placeholder="Ingresar Canción" 
             {...register('Titulo', { required: true })} 
           />
-          {errors.Titulo && <p>Campo requerido</p>}
+          
         </Form.Group>
 
         <Form.Group className="mb-3">
@@ -77,7 +79,7 @@ function Editar() {
             placeholder="Ingresar Duración" 
             {...register('Duracion', { required: true })} 
           />
-          {errors.Duracion && <p>Campo requerido</p>}
+          
         </Form.Group>
 
         <Form.Group className="mb-3">
@@ -87,7 +89,7 @@ function Editar() {
             placeholder="Ingresar Autor" 
             {...register('Autor', { required: true })} 
           />
-          {errors.Autor && <p>Campo requerido</p>}
+          
         </Form.Group>
 
         <Form.Group className="mb-3">
@@ -97,14 +99,14 @@ function Editar() {
             placeholder="Ingresar Link de Imagen" 
             {...register('Caratula', { required: true })} 
           />
-          {errors.Caratula && <p>Campo requerido</p>}
+          
         </Form.Group>
 
         <button type="submit">Guardar Cambios</button>
       </form>
 
       <button className="button-spacing" onClick={Volver}>Volver</button>
-    </div>
+    </>
   );
 }
 

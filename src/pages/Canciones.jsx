@@ -70,12 +70,15 @@ function Canciones() {
 
   //botones se utiliza una función que al hacer click 
   //se llamará a la función EliminarCancion y se le pasará el id de la canción. para eliminarla
+  //map : itera por cada elemento de la array Canciones
+  //key : para que se identifique como unico
+  //cada ves que apreta el boton eliminar se llama a la funcion EliminarCancion y se le pasa el id de la cancion lo mismo con EditarCancion
 
 
   return (
 
     <>
-    <div>
+    
       <h1>Top Canciones</h1>
       <button className="button-spacing" onClick={VolverHome}>Volver a Home</button>
       <button onClick={irAPaginaAgregar}>Agregar Nueva Cancion</button>
@@ -109,7 +112,7 @@ function Canciones() {
       </div>
            
       
-    </div>
+    
     
     </>
     

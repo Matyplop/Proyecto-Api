@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import axios from "axios"; //peticiones HTTP
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from 'react-router-dom';
@@ -36,10 +36,10 @@ function Canciones() {
 
   function llamarApi() {
     axios
-      .get("https://66e44d51d2405277ed13d77a.mockapi.io/Cancion")
+      .get("http://127.0.0.1:8000/api/songs")
       .then((response) => {
-        setCanciones(response.data); //aqui recibo los datos de la api para actualizar el estado  
-        console.log(response.data); 
+        setCanciones(response.data.song); //aqui recibo los datos de la api para actualizar el estado  
+        console.log(response.data.song); 
         
         
       });
@@ -52,7 +52,7 @@ function Canciones() {
 
 
   function EliminarCancion(id) {
-  axios.delete(`https://66e44d51d2405277ed13d77a.mockapi.io/Cancion/${id}`)
+  axios.delete(`http://127.0.0.1:8000/api/songs/${id}`)
   //obtiene la respuesta con then(response)
     .then((response) => {
       setCanciones(Canciones.filter(Canciones => Canciones.id !== id));
@@ -64,7 +64,7 @@ function Canciones() {
 
 
       
-      console.log(response.data);
+      console.log(response.data.song);
     });
   }
 
@@ -89,26 +89,22 @@ function Canciones() {
 
       <div className="grid-container">
         
-        {Canciones.map((Canciones) => { 
-          return (
-            <div className="card" key={Canciones.id}>
-              <h2>{Canciones.Titulo}</h2>
+        {Canciones.map((cancion) => (
+            <div className="card" key={cancion.id}>
+              <h2>{cancion.titulo}</h2>
               <img 
-                src={Canciones.Caratula} 
-                alt={Canciones.Titulo} 
-               
-                />
-              <p>Duración: {Canciones.Duracion} minutos</p>
-              <p>Autor: {Canciones.Autor}</p>
-              <button onClick={() => EditarCancion(Canciones.id)}>Editar <EditIcon /></button>
-              <button onClick={() => EliminarCancion(Canciones.id)}>Eliminar <DeleteIcon /></button>
-              
-              
-              
+                src={cancion.caratula} 
+                alt={`Carátula de ${cancion.titulo}`} 
+              />
+              <p>Autor: {cancion.autor}</p>
+              <p>Género: {cancion.genero}</p>
+              <button onClick={() => EditarCancion(cancion.id)}>Editar <EditIcon /></button>
+              <button onClick={() => EliminarCancion(cancion.id)}>Eliminar <DeleteIcon /></button>
             </div>
+          )
            
-          );
-        })}
+          )
+        };
       </div>
            
       

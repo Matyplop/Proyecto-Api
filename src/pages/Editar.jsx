@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import axios from "axios";
 import { useForm } from 'react-hook-form';
 import Form from 'react-bootstrap/Form';
@@ -19,17 +19,17 @@ function Editar() {
   //entonces cada vez que responde se guarda en data  (response.data)
   //
   useEffect(() => {
-    axios.get(`https://66e44d51d2405277ed13d77a.mockapi.io/Cancion/${id}`)
+    axios.get(`http://127.0.0.1:8000/api/songs`)
       .then((response) => {
-        const data = response.data;
+        const data = response.data.song;
         // aqui con setValue guardo los datos de la cancion en los campos del formulario
         //con esto podemos ver ya la informacion que esta por defecto y poder editarla
         //ademas sirve para pre cargar los datos en el formulario  
         //titulo es lo que sale en register y data.Titulo es lo que viene de la API
-        setValue('Titulo', data.Titulo);
-        setValue('Duracion', data.Duracion);
-        setValue('Autor', data.Autor);
-        setValue('Caratula', data.Caratula);
+        setValue('titulo', data.titulo);
+        setValue('duracion', data.autor);
+        setValue('autor', data.caratula);
+        setValue('caratula', data.genero);
       });
   }, [id, setValue]); //si esto cambia , que es lo que hace se vuelve a ejecutar
 
@@ -42,9 +42,9 @@ function Editar() {
   // Petición PUT para actualizar la canción
   // utilizamos la id para poder saber que cancion editar
   const editarCancion = (data) => {
-    axios.put(`https://66e44d51d2405277ed13d77a.mockapi.io/Cancion/${id}`, data)
+    axios.put(`http://127.0.0.1:8000/api/songs/${id}`, data)
       .then((response) => {
-        console.log(response.data);
+        console.log(response.data.song);
         navigate("/Canciones"); // al hacer la peticion se vá a la pagina canciones
       });
   };
@@ -67,17 +67,7 @@ function Editar() {
           <Form.Control 
             type="text" 
             placeholder="Ingresar Canción" 
-            {...register('Titulo', { required: true })} 
-          />
-          
-        </Form.Group>
-
-        <Form.Group className="mb-3">
-          <Form.Label>Duración</Form.Label>
-          <Form.Control 
-            type="number" 
-            placeholder="Ingresar Duración" 
-            {...register('Duracion', { required: true })} 
+            {...register('titulo', { required: true })} 
           />
           
         </Form.Group>
@@ -87,17 +77,28 @@ function Editar() {
           <Form.Control 
             type="text" 
             placeholder="Ingresar Autor" 
-            {...register('Autor', { required: true })} 
+            {...register('autor', { required: true })} 
           />
           
         </Form.Group>
+
 
         <Form.Group className="mb-3">
           <Form.Label>Carátula</Form.Label>
           <Form.Control 
             type="text" 
             placeholder="Ingresar Link de Imagen" 
-            {...register('Caratula', { required: true })} 
+            {...register('caratula', { required: true })} 
+          />
+          
+        </Form.Group>
+
+        <Form.Group className="mb-3">
+          <Form.Label>Genero</Form.Label>
+          <Form.Control 
+            type="text" 
+            placeholder="Ingresar Genero" 
+            {...register('genero', { required: true })} 
           />
           
         </Form.Group>

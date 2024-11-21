@@ -1,4 +1,4 @@
-import React from 'react';
+
 import axios from "axios";
 import { useForm } from 'react-hook-form';
 import Form from 'react-bootstrap/Form';
@@ -39,9 +39,9 @@ function Agregar() {
   //lo unico diferente es que se necesita como argumento la data que es la que envias a la api
 
   function agregarCancion(data) {
-  axios.post("https://66e44d51d2405277ed13d77a.mockapi.io/Cancion", data)
+  axios.post("http://127.0.0.1:8000/api/songs", data)
     .then((response) => {
-      console.log(response.data);
+      console.log(response);
       navigate("/Canciones");
       
      
@@ -68,7 +68,7 @@ function Agregar() {
         
         <Form.Group className="mb-3">
           <Form.Label>Nombre de la canción</Form.Label>
-          <Form.Control type="text"  placeholder="Ingresar Canción" {...register('Titulo',
+          <Form.Control type="text"  placeholder="Ingresar Canción" {...register('titulo',
             {required :true})}/>
             
 
@@ -77,33 +77,36 @@ function Agregar() {
         </Form.Group>
 
         <Form.Group className="mb-3">
-          <Form.Label>Duracion</Form.Label>
-          <Form.Control type="number" name= "Duracion" placeholder="Ingresar Duración(en minutos)" {...register("Duracion",
+          <Form.Label>Autor</Form.Label>
+          <Form.Control type="text" name= "autor" placeholder="Ingresar Autor" {...register("autor",
             {required :true})}/>
             
           
-        </Form.Group>
-
-
-        <Form.Group className="mb-3">
-          <Form.Label>Reproduccion</Form.Label>
-          <Form.Control type="text" name= "Autor" placeholder="Ingresar Autor" {...register("Autor",
-            {required :true})}/>
-            
-          
-
-
         </Form.Group>
 
         <Form.Group className="mb-3">
           <Form.Label>Caratula</Form.Label>
-          <Form.Control type="text" name= "Caratula" placeholder="Ingresar Link de imagen" {...register("Caratula",
+          <Form.Control type="text" name= "caratula" placeholder="Ingresar Link de imagen" {...register("caratula",
             {required :true})}/>
             
           
 
 
         </Form.Group>
+
+
+
+        <Form.Group className="mb-3">
+          <Form.Label>Genero</Form.Label>
+          <Form.Control type="text" name= "genero" placeholder="Ingresar Genero" {...register("genero",
+            {required :true})}/>
+            
+          
+
+
+        </Form.Group>
+
+        
 
        <button type = "submit" value="enviar"  >Agregar</button>
 

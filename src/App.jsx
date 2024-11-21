@@ -24,7 +24,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/Agregar" element={<Agregar />} />
       <Route path="/Home" element={<Home />} />
-      <Route path="/Editar/:id" element={<Editar />} /> //id es un parametro dinamico ,accedemos a ella mediante el hook useParams 
+      <Route path="/Editar/:id" element={<Editar />} /> 
       <Route path="/Canciones" element={<Canciones/>} />
     </Routes>
   

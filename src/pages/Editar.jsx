@@ -108,7 +108,7 @@ function Editar() {
 
       <button className="button-spacing" onClick={Volver}>Volver</button>
     </>
-  );
-}
+  )
+};
 
 export default Editar;

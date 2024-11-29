@@ -19,7 +19,7 @@ function Editar() {
   //entonces cada vez que responde se guarda en data  (response.data)
   //
   useEffect(() => {
-    axios.get(`http://127.0.0.1:8000/api/songs`)
+    axios.get(`https://favourite-odessa-matyplop-fb1c7371.koyeb.app/api/songs`)
       .then((response) => {
         const data = response.data.song;
         // aqui con setValue guardo los datos de la cancion en los campos del formulario
@@ -42,7 +42,7 @@ function Editar() {
   // Petición PUT para actualizar la canción
   // utilizamos la id para poder saber que cancion editar
   const editarCancion = (data) => {
-    axios.put(`http://127.0.0.1:8000/api/songs/${id}`, data)
+    axios.put(`https://favourite-odessa-matyplop-fb1c7371.koyeb.app/api/songs/${id}`, data)
       .then((response) => {
         console.log(response.data.song);
         navigate("/Canciones"); // al hacer la peticion se vá a la pagina canciones

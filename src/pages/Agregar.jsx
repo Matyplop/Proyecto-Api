@@ -39,7 +39,7 @@ function Agregar() {
   //lo unico diferente es que se necesita como argumento la data que es la que envias a la api
 
   function agregarCancion(data) {
-  axios.post("http://127.0.0.1:8000/api/songs", data)
+  axios.post("https://favourite-odessa-matyplop-fb1c7371.koyeb.app/api/songs", data)
     .then((response) => {
       console.log(response);
       navigate("/Canciones");

@@ -36,7 +36,7 @@ function Canciones() {
 
   function llamarApi() {
     axios
-      .get("http://127.0.0.1:8000/api/songs")
+      .get("https://favourite-odessa-matyplop-fb1c7371.koyeb.app/api/songs")
       .then((response) => {
         setCanciones(response.data.song); //aqui recibo los datos de la api para actualizar el estado  
         console.log(response.data.song); 
@@ -52,7 +52,7 @@ function Canciones() {
 
 
   function EliminarCancion(id) {
-  axios.delete(`http://127.0.0.1:8000/api/songs/${id}`)
+  axios.delete(`https://favourite-odessa-matyplop-fb1c7371.koyeb.app/api/songs/${id}`)
   //obtiene la respuesta con then(response)
     .then((response) => {
       setCanciones(Canciones.filter(Canciones => Canciones.id !== id));
